@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load assets %}
+
+{% block page_css %}
+    {% assets "test_main_all_css" %}
+        <link type="text/css" rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+
+{% block page_js %}
+    {% assets "test_main_all_js" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <script type="text/javascript">
+        Test.data.index.url_load = "{% url 'ajax_load_page' %}";
+        Test.data.index.url_create = "{% url 'ajax_create_page' %}";
+        Test.data.index.url_update = "{% url 'ajax_update_page' %}";
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="process-update-forms-block">
+        <input class="save-updates" type="button" value="Сохранить изменения">
+        <input class="cancel-updates" type="button" value="Откатить изменения">
+    </div>
+    <div class="some-error">Уууупс, что-то пошло не так :D</div>
+    <div class="left-menu">
+        <ul>
+            <li>
+                <a class="menu-item" data-type="users" href="#">Пользователи</a>
+            </li>
+            <li>
+                <a class="menu-item" data-type="rooms" href="#">Комнаты</a>
+            </li>
+        </ul>
+    </div>
+    <div class="right-menu">
+        <table class="info-users-table">
+            <tr>
+                <td>id</td>
+                <td>Имя</td>
+                <td>Заработная плата</td>
+                <td>Дата поступления на работу</td>
+            </tr>
+        </table>
+        <table class="info-rooms-table">
+            <tr>
+                <td>id</td>
+                <td>Отдел</td>
+                <td>Вместимость</td>
+                <td>Номер</td>
+            </tr>
+        </table>
+        <div class="add-user-block">
+            <form action="#" method="post" class="add-user-form">
+                {% csrf_token %}
+                {{ form_user.as_p }}
+                <input type="reset" value="Отменить">
+                <input class="submit-form" data-type="users" type="submit" value="Создать">
+            </form>
+            <div class="form-block-title">Создание пользователя</div>
+        </div>
+        <div class="add-room-block">
+            <form action="#" method="post" class="add-room-form">
+                {% csrf_token %}
+                {{ form_room.as_p }}
+                <input type="reset" value="Отменить">
+                <input class="submit-form" data-type="rooms" type="submit" value="Создать">
+            </form>
+            <div class="form-block-title">Создание комнаты</div>
+        </div>
+    </div>
+{% endblock %}

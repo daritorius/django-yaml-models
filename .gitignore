@@ -1,0 +1,5 @@
+.idea
+venv
+virtualenv
+src/db.sqlite3
+*.py[co]

@@ -1,0 +1,7 @@
+django==1.6.7
+south
+pyyaml
+cssmin
+jsmin
+django-assets
+webassets

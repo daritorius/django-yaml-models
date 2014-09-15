@@ -1,0 +1,84 @@
+body {
+    position: relative;
+}
+
+.some-error {
+    width: 100%;
+    clear: both;
+    color: darkred;
+    margin-bottom: 10px;
+    display: none;
+    text-align: center;
+}
+
+.process-update-forms-block {
+    position: fixed;
+    top: 3px;
+    left: 226px;
+    display: none;
+    background-color: #ffffff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.left-menu {
+    float: left;
+    width: 200px;
+    height: auto;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding-top: 15px;
+}
+
+.left-menu .active {
+    font-weight: bold;
+}
+
+.right-menu {
+    margin-left: 220px;
+    margin-top: 30px;
+}
+
+.info-users-table td, .info-rooms-table td {
+    padding: 5px 18px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.add-user-block, .add-room-block {
+    position: relative;
+    padding: 5px;
+    border: 1px solid #000000;
+    width: 510px;
+    margin-top: 15px;
+}
+
+.add-room-block {
+    width: 328px;
+}
+
+.info-rooms-table, .add-room-block {
+    display: none;
+}
+
+.form-block-title {
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    font-size: 14px;
+    padding: 0 5px;
+    background-color: #ffffff;
+}
+
+.errors-list {
+    color: darkred;
+    font-size: 12px;
+}
+
+.ui-datepicker-trigger {
+    display: none;
+}
